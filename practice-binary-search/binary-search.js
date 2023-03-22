@@ -1,10 +1,27 @@
 function linearSearch (arr, target) {
 
-  // Can you solve this in one line?
+  return arr.indexOf(target);
 
 };
 
+
 function binarySearch(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    if (arr[mid] === target) {
+      return mid;
+    } else if (arr[mid] < target) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+
+  return -1;
 
   // Set integers pointing to the high and low range of possible indices
 
@@ -22,7 +39,6 @@ function binarySearch(arr, target) {
       // Move the high pointer to midpoint - 1
 
   // Return -1 if the loop exits with overlapping pointers
-
 }
 
 
